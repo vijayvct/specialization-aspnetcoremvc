@@ -1,0 +1,122 @@
+Asp.NET Core MVC 
+----------------
+
+Asp.NET Core 
+------------
+Asp.Net core is cross-platform, high-performance,light-weight and open-source framework for building modern, cloud-enabled, Internet connected Apps(IOT).
+It also helps to create backend application (RestFul API)
+Deploy to cloud or on-permises
+Use favorite development tools on Windows, Linux and MAC
+
+Why ?
+-----
+It is cross-platform in nature
+It provides unified templates to create Web UI(MVC and RazorPage) and Web API 
+
+	Empty Project :- You can configure the project as per your requirement 
+	MVC - It helps creating applicaiton using popular MVC design pattern 
+	Web API - Http based services
+	RazorPage - It helps creating application for page-focused scenarios 
+	
+	Blazor - It allows to create SPA(Single Page Application) and run C# code in browser 
+	
+It has built-in support for dependency injection
+It has built-in support for logging
+Asp.NET Core apps can be deployed on the following 
+
+	Kestrel 
+	IIS
+	HTTP.sys
+	Nginx
+	Apache
+	Docker 
+	
+Asp.NET Core does not support Asp.NET Web Forms 
+
+What is MVC?
+------------
+MVC stands for Model-View-Controller
+It is popular pattern for developing web application
+It helps to achieve separation of concern i.e. It divides the application into following 
+	Model - Data 
+	View - UI (HTML5)
+	Controller - Logic to process request 
+	
+Eases in unit testing 
+Support Routing, Model Binding , Model Validation 
+Use Razor View Engine to render UI 
+
+Asp.NET Web Forms 
+-----------------
+-It was tighly coupled 
+-Difficult for unit testing 
+-It uses ViewState which makes page heavy 
+
+Project Templates 
+-----------------
+Asp.NET Core Web Application (MVC)
+Asp.NET Core Web Application (Razor Page)
+Asp.NET Core Web API 
+Asp.NET Core Empty Application
+
+Version History of Asp.NET Core 
+-------------------------------
+Asp.NET Core 1.0 , 1.1 - VS 2015
+Asp.NET Core 2.0,2.1,2.2 - VS 2017 
+Asp.NET Core 3.0, 3.1 , 5 - VS 2019 
+Asp.NET Core 6.0,7.0, 8.0preview - VS 2022
+
+Practical 
+---------
+1)Create an Asp.NET Core Empty Project 
+2)Understand the Project Structure 
+	wwwroot 
+	Program.cs
+	appsetting.json
+	launchSettings.json 
+	Model 
+	Views 
+	Controller
+3)Concept of Services and Middleware
+
+wwwroot :- It is a special folder for keeping all the static content (HTML,CSS,JS,Images etc....)
+
+Program.cs :- It is the start point of the application. It contains the code for intialization and bootstrapping your ASP.NET Core Project. It also consist of configuration of Services and Middleware for your application 
+
+
+Till 5.0 
+--------
+	Program.cs 
+	Startup.cs 
+		ConfigureServices() - used to configure the service
+		Configure() - used to configure Middleware
+		
+Middlewares
+-----------
+Asp.Net Core Middleware are the software components that are assembeled into the application pipeline to handle the HTTP Request and Response
+Each Middleware component in Asp.NET Core application performs the following task 
+
+	-Choose whether to execute the HTTP request or pass it to the next middleware component in the pipeline. This is can be achieved by calling the next method in the middleware 
+	-Can perform work before and after the next middleware component in the pipeline
+	
+Terminal Middleware or Short-Circuiting a Middleware
+
+http://localhost:1234 -> Hello world 
+
+http://localhost:1234/showmessage -> Hello User, Welcome to Aso.NET Core 
+
+http://localhost:1234/index.html 
+
+http://localhost:1234/demo/demo.html
+
+appsettings.json 
+----------------
+This file lets you store setting for the application i.e. ConnectionString,Credentials, User Secrets etc......
+There can be multiple version of appsettings.json file in a project 
+
+	appsettings.json (production)
+	appsettings.development.json (development)
+	appsettings.staging.json
+	appsettings.testing.json 
+	
+	the above version of the files would be selected by the ASP.NET core based on the ASPNETCORE_ENVIORNMENT variable value mentioned in the launch profile of the launchsettings.json 

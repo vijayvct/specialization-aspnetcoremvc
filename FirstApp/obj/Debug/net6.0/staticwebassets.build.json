@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "lj7XxAfpSeCsQExsUongwVyqCSwt4YrBOlqbT15gJM0=",
+  "Source": "FirstApp",
+  "BasePath": "_content/FirstApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FirstApp\\wwwroot",
+      "Source": "FirstApp",
+      "ContentRoot": "C:\\Demos\\Dotnet Specialization 2023\\Asp\\FirstApp\\wwwroot\\",
+      "BasePath": "_content/FirstApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Demos\\Dotnet Specialization 2023\\Asp\\FirstApp\\wwwroot\\index.html",
+      "SourceId": "FirstApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Demos\\Dotnet Specialization 2023\\Asp\\FirstApp\\wwwroot\\",
+      "BasePath": "_content/FirstApp",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
