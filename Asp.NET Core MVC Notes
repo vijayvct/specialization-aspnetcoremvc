@@ -120,3 +120,121 @@ There can be multiple version of appsettings.json file in a project
 	appsettings.testing.json 
 	
 	the above version of the files would be selected by the ASP.NET core based on the ASPNETCORE_ENVIORNMENT variable value mentioned in the launch profile of the launchsettings.json 
+	
+Hosting Model in Asp.NET Core 
+-----------------------------
+
+What is Kestrel ?
+-----------------
+Kestrel is a cross-platform web server for Asp.NET Core. It is the webserver that is included by default in Asp.NET Core project templates
+
+Features of Kestrel
+-------------------
+It Supports SSL 
+Light-weight
+Cross-Platform 
+It can handle a huge number of requests for the web application 
+
+Out-of Process Hosting Model 
+----------------------------
+In Out-of Process hosting models, we can either use the Kestrel server directly as user request facing server or we can deplot the app into IIS or any other proxy server and send request to internal Kestrel server
+
+In-Process Hosting Model 
+------------------------
+In this aproach only one server is used for hosting the application
+
+BookStoreApp - To manage book details 
+
+For MVC Project 
+---------------
+	Controllers 
+		- Consist of all the controller classes 
+		
+			<<classname>>Controller.cs
+			
+			eg:- HomeController,EmployeeController,AccountController etc....
+	Models 
+		- Consist of the Model Class(Entity) and logic to perform CRUD operation
+		
+		
+	Views 
+		- Consist of all the views files organized as per the controllername 
+		
+			Views 
+				Home
+					Index.cshtml 
+					About.cshtml 
+				Employee
+					Index.cshtml 
+					Create.cshtml 
+					...
+					
+		View files are based on the razor syntax and their extension is .cshtml (C#) or .vbhtml (VB.NET)
+
+Razor Syntax
+------------
+Razor is view engine for ASP.NET Core MVC.
+It allows you to write a mix of HTML and server-side code using C# or Visual Basic.
+Razor view with VB syntax has .vbhtml file extension and C# syntax will have .cshtml 
+
+Advantages 
+----------
+Compact :- Razor Syntax is compact, enabling you to minimize the number if characters and keystrokes required to write code 
+
+Easy to Learn :- Razor syntax is easy to learn where you can use your familiar langauge C# or Visual Basic 
+
+Intellisense :- It supports statement completion with Visual Studio 
+
+Inline Expression 
+-----------------
+
+<p>@DateTime.Now.ToString()</p>
+
+Multi-Line Code Block 
+---------------------
+@{
+	var date = DateTime.Now.ToString();
+	var message = "Hello User";
+}
+
+<h2>Date is @date</h2>
+<h3>@message</h3>
+
+@* ..... *@ - Comments in Razor Syntax
+
+To enable Asp.Net MVC Functionality in Empty Project 
+----------------------------------------------------
+
+Asp.NET 1.0 to 2.2
+
+	AddMVC() // Adds MVC and Web API Support to the project 
+	
+Asp.NET 3.0 to 7.0
+
+	AddMVC() 
+	
+	AddControllersWithViews() - MVC
+	AddControllers() - WEB API 
+	AddRazorPages() - Razore Page Web APP
+	
+
+Asp.NET Web Forms 
+-----------------
+	http://localhost/default.aspx
+	http://localhost/AddEmployee.aspx...
+	
+Asp.NET MVC 
+-----------
+
+	http://localhost/controller/action
+	
+	http://localhost/home/index
+	http://localhost/home/about
+	
+	http://localhost/employee/details?id=1
+	
+
+	ViewBag - dynamic data type 
+	ViewData - Dictionary
+	
+	TempData

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.FileProviders;
 using System.Reflection.Metadata.Ecma335;
-
+using System.Diagnostics;
 namespace FirstApp
 {
     public class Program
@@ -32,6 +32,10 @@ namespace FirstApp
 
             app.MapGet("/message", () => { return config["message"]; });
 
+            app.MapGet("/showserver", () => 
+            {
+                return "Application is running on " + Process.GetCurrentProcess().ProcessName;
+            });
             app.Run();
         }
     }
