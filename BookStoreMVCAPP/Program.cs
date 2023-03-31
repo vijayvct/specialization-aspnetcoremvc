@@ -1,3 +1,5 @@
+using BookStoreMVCAPP.Services;
+
 namespace BookStoreMVCAPP
 {
     public class Program
@@ -8,18 +10,18 @@ namespace BookStoreMVCAPP
 
             //Configure the project to behave as an ASP.NET Core MVC Project
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddSingleton<IBookRepository, MockBookRepository>();
             var app = builder.Build();
 
             //Middleware for MVC 
-
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
 
                 endpoints.MapControllerRoute(name: "booksroute",
-                    pattern: "{controller=Books1}/{action=Index}/{id?}");
+                    pattern: "{controller=Books}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

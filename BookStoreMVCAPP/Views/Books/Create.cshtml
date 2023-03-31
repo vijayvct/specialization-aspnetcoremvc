@@ -1,0 +1,50 @@
+﻿@using BookStoreMVCAPP.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,BookStoreMVCAPP
+@model BookStoreMVCAPP.Models.Book
+
+<html>
+	<head>
+	<link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+	</head>
+	<body>
+	<h2>New Book</h2>
+
+	<form asp-controller="Books" asp-action="Create" method="post">
+
+		<div class="form-group">
+			<label asp-for="Title" class="control-label"></label>
+			<input asp-for="Title" class="form-control"/>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="Author" class="control-label"></label>
+			<input asp-for="Author" class="form-control" />
+		</div>
+
+		<div class="form-group">
+			<label asp-for="Description" class="control-label"></label>
+			<textarea asp-for="Description" class="form-control" ></textarea>
+		</div>
+
+		@*<div class="form-group">
+			<label asp-for="Language" class="control-label"></label>
+			<input asp-for="Language" class="form-control" />
+		</div>*@
+
+		<div class="form-group">
+			<label asp-for="Language" class="control-label"></label>
+			<select asp-for="Language" class="form-control"
+				asp-items="Html.GetEnumSelectList<Language>()">
+					<option value="">
+						Select Language
+					</option>
+				</select>
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Add Book</button>
+		</div>
+	</form>
+	</body>
+</html>

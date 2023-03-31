@@ -238,3 +238,56 @@ Asp.NET MVC
 	ViewData - Dictionary
 	
 	TempData
+	
+ViewBag - Is used to transfer temporary data from controller to the view. It is based on the dynamic data type so you do not need to perform explicit type casting while access the data from the ViewBag. It allows us to create properties on the go to store the information
+
+ViewData - ViewData is similar to ViewBag, which transfer the data from controller to View. ViewData is based on dictionary, so its store the data in key-value pairs. It box the data as object so which access the data or perform anyother operation data we need to perform explicit type-casting 
+
+TempData - It is used to transfer data from View to Controller , Controller to View or from one action method to another action method of the same of different controller
+
+What is Repository Pattern?
+---------------------------
+
+Repository pattern is a design pattern that mediates data from and to the Domain and the Data Access Layer(like EF , EF Core, ADO.NET).
+It helps us create an abstraction layer between the data access and the business logic layer.
+By using it, we are promoting a more loosely coupled approach to access our data from the database
+It also helps us to acces clean code which is easy to maintain and reuse
+
+Data access logic is in a separate class or set of classes called repositry 
+
+Service Lifetime in Dependency Injection 
+----------------------------------------
+
+Transient 
+---------
+The first way we can register a type in dependency injection container is by using Transient lifetime 
+
+In this case, an object is created every time it is requested from the dependency injection container.
+
+AddTransient<interface,implementclass>()
+
+Scoped 
+-------
+In this case, one object is created per request lifecycle.
+
+AddScoped<interface,implementclass>()
+
+Singleton 
+---------
+In this case, only one object is create for all the users who are accessing the application 
+
+AddSingleton<interface,implementclass>()
+
+Lib Manager 
+-----------
+It is tool built into Visual Studio to manager client side libraries 
+It helps to pull libraries from multiple provider cdnjs,unpkg etc.
+It adds json file to the project using which we can easily work with client side libraries
+
+BookStoreMVC Application 
+------------------------
+List of Books 
+Add New Books 
+Search Book based on ID 
+Update Book 
+Delete Book 

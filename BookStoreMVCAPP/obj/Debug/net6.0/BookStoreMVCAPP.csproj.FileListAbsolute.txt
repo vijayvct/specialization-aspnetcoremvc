@@ -26,3 +26,4 @@ C:\Demos\Dotnet Specialization 2023\Asp\BookStoreMVCAPP\obj\Debug\net6.0\refint\
 C:\Demos\Dotnet Specialization 2023\Asp\BookStoreMVCAPP\obj\Debug\net6.0\BookStoreMVCAPP.pdb
 C:\Demos\Dotnet Specialization 2023\Asp\BookStoreMVCAPP\obj\Debug\net6.0\BookStoreMVCAPP.genruntimeconfig.cache
 C:\Demos\Dotnet Specialization 2023\Asp\BookStoreMVCAPP\obj\Debug\net6.0\ref\BookStoreMVCAPP.dll
+C:\Demos\Dotnet Specialization 2023\Asp\BookStoreMVCAPP\bin\Debug\net6.0\BookStoreMVCAPP.staticwebassets.runtime.json
