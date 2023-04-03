@@ -290,4 +290,71 @@ List of Books
 Add New Books 
 Search Book based on ID 
 Update Book 
-Delete Book 
+Delete Book
+
+Tag Helpers :- Provides a convient way to create HTML Markup with MVC Implementation
+
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *,BookStoreMVCAPP 
+
+Creating Centralized Layout Page (Common Look and Feel)
+------------------------------------------------------
+Asp.NET Core MVC uses the concept of Layout pages to have common look and feel across multiple views
+We can have one or more layout added to the project 
+The layout should always be placed in the shared folder under views folder 
+
+After creating the layout we refer the in each view by using the Layout property of the view or we refer the Layout globally for tha whole application in the _ViewStart.cshtml
+
+Special Files in Asp.NET Core 
+-----------------------------
+_ViewStart.cshtml - It is used to specify the start up action for the project 
+
+_ViewImports.cshtml - It is used to include the using statement 
+
+The above 2 files should be placed in the Views Folder
+
+Model Binding 
+-------------
+Model Binding maps data in a HTTP Request to controller action method parameters
+The action parameters may be simple type such as integer, strings etc or complex types like Customer,Employee,Book etc...
+Model binding does all the heavy lifting for perform data binding and due we write less code 
+
+Model Validation in Asp.NET Core 
+--------------------------------
+Model Validation helps us validate the user inputs for a Model before sending it to server for processing 
+To implement model validation in Asp.NET Core MVC we use data annotation 
+
+	System.ComponentModel.DataAnnotation;
+	
+	Require 
+	DisplayName 
+	DataType....
+	
+To capture the validation errors on a view we can use the below options 
+
+	1)Validation Summary - Display a summarized description of all the errors on the view 
+	
+	<div asp-validation-summary="All"> </div>
+	
+	2)Display invidual validation error message for a control 
+	
+	<span asp-validation-for="Name"></span>
+	
+	In controllers we wil use the ModelState.IsValid to check wheather the validation is passed or failed
+
+Understand the service lifetime 
+-------------------------------
+AddSingleton()
+--------------
+As the name implies this method create a Singleton Service.
+A Singleton service is create when the first request is made and the instance is used by all the subsequent request.
+
+AddScoped()
+-----------
+This method creates a Scoped service.
+A new instance of a Scoped Service is created once per request within the scope
+
+AddTransient()
+--------------
+This method creates Transient service.
+A new instance of a Transient service is created each time it is requested

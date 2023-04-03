@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css"/>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+   <div class="container">
+       <div class="text-center">
+           <h2>Book Store Application</h2>
+       </div>
+
+       <div>
+           <a asp-controller="Books" asp-action="Index">Home</a>
+           <a asp-controller="Books" asp-action="Create">Add Book</a>       
+       </div>
+
+       <div>
+           @RenderBody()
+       </div>
+   </div>
+</body>
+</html>

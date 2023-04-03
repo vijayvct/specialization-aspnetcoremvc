@@ -10,7 +10,9 @@ namespace BookStoreMVCAPP
 
             //Configure the project to behave as an ASP.NET Core MVC Project
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IBookRepository, MockBookRepository>();
+            //builder.Services.AddSingleton<IBookRepository, MockBookRepository>();
+            //builder.Services.AddScoped<IBookRepository,MockBookRepository>();
+            builder.Services.AddTransient<IBookRepository,MockBookRepository>();
             var app = builder.Build();
 
             //Middleware for MVC 

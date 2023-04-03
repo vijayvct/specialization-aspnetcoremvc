@@ -1,13 +1,6 @@
-﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
-@addTagHelper *,BookStoreMVCAPP
-@model IEnumerable<BookStoreMVCAPP.Models.Book>
+﻿
+@model IEnumerable<Book>
 
-
-<html>
-	<head>
-		<link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css"/>
-	</head>
-	<body>
 	<h2>Book Index Page</h2>
 
 	<p>List of books to be displayed</p>
@@ -17,6 +10,7 @@
 			<th>ID</th>
 			<th>Title</th>
 			<th>Author</th>
+			<th></th>
 		</tr>
 
 		@foreach (var item in Model)
@@ -25,6 +19,11 @@
 				<td>@item.Id</td>
 				<td>@item.Title</td>
 				<td>@item.Author</td>
+				<td>
+					<a asp-controller="Books" asp-action="Details" asp-route-id="@item.Id">
+						Details
+					</a>
+				</td>
 			</tr>
 		}
 	</table>
@@ -32,6 +31,6 @@
 	<a asp-controller="Books" asp-action="Create">Add New Book</a>	
 
 	@*@Html.ActionLink("Add New Book","Create","Books")*@
-	</body>
-</html>
+	
+
 

@@ -27,9 +27,21 @@ namespace BookStoreMVCAPP.Controllers
         [HttpPost]
         public IActionResult Create(Book book)
         {
-            repository.Create(book);
+            if (ModelState.IsValid)
+            {
+                repository.Create(book);
 
-            return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+        public IActionResult Details(int? id)
+        {
+            var book = repository.Get(id);
+
+            return View(book);
         }
     }
 }
