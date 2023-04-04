@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Demos\Dotnet Specialization 2023\Asp\BookStoreMVCAPP
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Demos/Dotnet Specialization 2023/Asp/BookStoreMVCAPP/Views/Books/BookNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQm9va05vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Demos/Dotnet Specialization 2023/Asp/BookStoreMVCAPP/Views/Books/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +30,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Demos/Dotnet Specialization 2023/Asp/BookStoreMVCAPP/Views/Books/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Demos/Dotnet Specialization 2023/Asp/BookStoreMVCAPP/Views/Error/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Demos/Dotnet Specialization 2023/Asp/BookStoreMVCAPP/Views/Error/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcTm90Rm91bmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Demos/Dotnet Specialization 2023/Asp/BookStoreMVCAPP/Views/Home/Index.cshtml]

@@ -1,17 +1,17 @@
 ﻿@model Book
 
-@if(Model==null)
+@*@if(Model==null)
 {
 	<p>Book not found</p>
 	<p>Please try again with a different id</p>
 }
 else
-{
+{*@
 	<h3>Book Details</h3>
 	<p>Id :- @Model.Id</p>
 	<p>Title :- @Model.Title</p>
 	<p>Description :- @Model.Description</p>
 	<p>Langauge :- @Model.Language</p>
-}
+@*}*@
 
 <a asp-controller="Books" asp-action="Index">Back to List</a>

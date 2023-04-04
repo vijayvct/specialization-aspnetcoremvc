@@ -358,3 +358,59 @@ AddTransient()
 --------------
 This method creates Transient service.
 A new instance of a Transient service is created each time it is requested
+
+Implementing EF Core 
+--------------------
+Libraries Required 
+------------------
+Microsoft.EntityFrameworkCore 
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools 
+Microsoft.EntityFrameworkCore.Design
+
+Code First 
+
+Nuget Package Manager Conosle 
+
+Install-Package Microsoft.EntityFrameworkCore -version 6.0.15
+Install-Package Microsoft.EntityFrameworkCore.SqlServer -version 6.0.15
+Install-Package Microsoft.EntityFrameworkCore.Tools -version 6.0.15
+Install-Package Microsoft.EntityFrameworkCore.Design -version 6.0.15
+
+Migration
+
+
+Error and Exception Handling 
+----------------------------
+
+Resource with specified ID does not exits 
+
+The provided url does not match any route in the application 
+
+Centralized 404 Error Handling 
+
+	UseStatusCodePage()
+	UseStatusCodePageWithRedirects()
+	UseStatusCodePageWithReExecute()
+	
+Exception Handling 
+
+	UseExceptionHandler()
+	
+How to create re-usable user interface?
+---------------------------------------
+Partial View
+------------
+A partial view is a Razore markup file that renders HTML output within another markup files rendered output 
+
+Why?
+----
+It breaks up large markup file into smaller components 
+
+Reduce the duplication of common markup content across markup files 
+
+MVC --> Views/Shared
+
+RazorPage --> Pages 
+
+View Components

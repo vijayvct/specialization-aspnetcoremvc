@@ -1,0 +1,25 @@
+﻿@model Book
+
+@{
+	var status = (bool)ViewData["ShowButtons"];
+}
+
+<div class="card m-3">
+	<div class="card-header">
+		@Model.Title
+	</div>
+	<div class="card-body">
+		@Model.Author
+	</div>
+	@if (status)
+	{
+		<div class="card-footer text-center">
+			<a asp-controller="Books" asp-action="Details" asp-route-id="@Model.Id"
+	class="btn btn-primary m-1">View</a>
+			<a asp-controller="Books" asp-action="Edit" asp-route-id="@Model.Id"
+	class="btn btn-primary m-1">Edit</a>
+			<a asp-controller="Books" asp-action="Delete" asp-route-id="@Model.Id"
+	class="btn btn-primary m-1">Delete</a>
+		</div>
+	}
+</div>

@@ -1,11 +1,26 @@
 ﻿
 @model IEnumerable<Book>
 
+@{
+	ViewData["ShowButtons"] = true;
+}
+
 	<h2>Book Index Page</h2>
 
 	<p>List of books to be displayed</p>
 
-	<table class="table">
+	<div class="card-deck">
+		@foreach(var book in Model)
+	{
+		<!--Using Tag Helper-->
+		@*<partial name="~/Views/Shared/_DisplayBookPartial.cshtml" model="book"/>*@
+
+		<!--Asynchronous HTML Helpers-->
+		@await Html.PartialAsync("_DisplayBookPartial",book)
+	}
+</div>
+
+	@*<table class="table">
 		<tr>
 			<th>ID</th>
 			<th>Title</th>
@@ -27,7 +42,7 @@
 			</tr>
 		}
 	</table>
-
+*@
 	<a asp-controller="Books" asp-action="Create">Add New Book</a>	
 
 	@*@Html.ActionLink("Add New Book","Create","Books")*@

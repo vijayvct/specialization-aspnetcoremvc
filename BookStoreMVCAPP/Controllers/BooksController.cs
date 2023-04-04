@@ -31,7 +31,7 @@ namespace BookStoreMVCAPP.Controllers
             {
                 repository.Create(book);
 
-                //return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
 
             return View();
@@ -41,7 +41,44 @@ namespace BookStoreMVCAPP.Controllers
         {
             var book = repository.Get(id);
 
+            if (book == null)
+            {
+                Response.StatusCode = 404;
+                return View("BookNotFound", id);
+            }
+
             return View(book);
+        }
+
+        public IActionResult GetData()
+        {
+            throw new Exception("This is some error message");
+        }
+
+        //[Route("Books/Demo")]
+        //public IActionResult GetServerError()
+        //{
+        //    //return StatusCode(StatusCodes.Status500InternalServerError, new {Message="Hello"});
+        //    ;
+        //}
+
+        [HttpGet]
+        public IActionResult Delete(int? id) 
+        {
+            var book = repository.Get(id);
+
+            if (book == null)
+                return NotFound();
+
+            return View(book);
+        }
+
+        [HttpPost,ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var book = repository.Delete(id);
+
+            return RedirectToAction("Index");
         }
     }
 }
