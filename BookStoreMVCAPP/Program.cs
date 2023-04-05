@@ -1,5 +1,6 @@
 using BookStoreMVCAPP.Data;
 using BookStoreMVCAPP.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreMVCAPP
@@ -15,7 +16,10 @@ namespace BookStoreMVCAPP
             builder.Services.AddDbContext<BookStoreContext>
                 (
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("bookconn"))
-                ); 
+                );
+
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<BookStoreContext>();
 
             builder.Services.AddControllersWithViews();
             //builder.Services.AddSingleton<IBookRepository, MockBookRepository>();
@@ -40,6 +44,9 @@ namespace BookStoreMVCAPP
             //Middleware for MVC 
             app.UseStaticFiles();
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

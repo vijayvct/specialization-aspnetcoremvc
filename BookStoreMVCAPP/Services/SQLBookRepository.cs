@@ -12,7 +12,17 @@ namespace BookStoreMVCAPP.Services
 			this.context = context;
         }
 
-        public Book Create(Book entity)
+		public IEnumerable<LanguageCount> BookCountByLanguage()
+		{
+			return context.Books.GroupBy(b => b.Language)
+				.Select(g => new LanguageCount()
+				{
+					Language = g.Key.Value,
+					Count = g.Count()
+				});
+		}
+
+		public Book Create(Book entity)
 		{
 			context.Books.Add(entity);
 			context.SaveChanges();

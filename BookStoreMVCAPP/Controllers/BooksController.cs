@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BookStoreMVCAPP.Services;
 using BookStoreMVCAPP.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStoreMVCAPP.Controllers
 {
+    [Authorize]
     public class BooksController : Controller
     {
         private IBookRepository repository;
@@ -12,6 +14,8 @@ namespace BookStoreMVCAPP.Controllers
         {
             this.repository = repository;
         }
+
+        [AllowAnonymous]
 
         public IActionResult Index()
         {

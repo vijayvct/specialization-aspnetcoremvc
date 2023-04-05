@@ -16,7 +16,12 @@ namespace BookStoreMVCAPP.Services
 
         }
 
-        public Book Create(Book entity)
+		public IEnumerable<LanguageCount> BookCountByLanguage()
+		{
+			throw new NotImplementedException();
+		}
+
+		public Book Create(Book entity)
         {
             var id = list.Max(x => x.Id) + 1;
             entity.Id = id;

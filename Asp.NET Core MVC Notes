@@ -414,3 +414,37 @@ MVC --> Views/Shared
 RazorPage --> Pages 
 
 View Components
+---------------
+View Components are similar to partial view but they are much more powerful
+It does not used model binding and only depends on the data provided when calling into it 
+It renders a chunck rather than a whole response 
+Can have parameters and business logic
+It is typically invoked from the layout page 
+
+Where to use?
+-------------
+Dynamic Navigation Menus 
+Login Panel 
+Shopping Cart 
+Recently Published Arcticles 
+
+A View component should always inherit fro ViewComponent class 
+
+LanguageCount --> LanguageCountViewComponent.cs
+ShoppingCart --> ShoppingCartViewComponent.cs
+
+The View for the ViewComponent should be placed as per the following heirarchy 
+
+	Views 
+		Shared
+			Components
+				LanguageCount
+					view file
+					
+To render the view compoenent in the layout file we can use the following ways 
+
+1) @await Component.InvokeAsync("ComponentName")
+
+2) View Component Tag Helper 
+
+	<vc:nameofcompoentview></vc:nameofcompoentview>

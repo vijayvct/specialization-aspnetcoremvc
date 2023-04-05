@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 
 <html>
 <head>
@@ -7,14 +9,54 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-   <div class="container">
-       <div class="text-center">
-           <h2>Book Store Application</h2>
-       </div>
+    <header>
+        <div class="text-center">
+            <h2>Book Store Application</h2>
+        </div>
+        <nav>
+            <div class="container">
+                <div>
+                    <a asp-controller="Books" asp-action="Index">Home</a>
+                    <a asp-controller="Books" asp-action="Create">Add Book</a>
+                </div>
 
+                <ul class="navbar-nav ml-auto">
+                    @*If the user has logged in display logout link*@
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <form method="post" asp-controller="Account" asp-action="logout">
+                                <button type="submit" style="width: auto;"
+                                        class="nav-link btn btn-link py-0">
+                                    Logout @User.Identity.Name
+                                </button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="account" asp-action="register">
+                                Register
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="account" asp-action="login">
+                                Login
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </header>
+   <div class="container">   
+       
        <div>
-           <a asp-controller="Books" asp-action="Index">Home</a>
-           <a asp-controller="Books" asp-action="Create">Add Book</a>       
+           @*@await Component.InvokeAsync("LanguageCount")*@
+          @* <vc:language-count>
+
+           </vc:language-count>*@
        </div>
 
        <div>
